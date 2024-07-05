@@ -2,9 +2,8 @@
 Author: MD. SABBIR HOSEN HOOWLADER
 Website: https://sabbir28.github.io/
 License: Private, do not change without permission
-"""
 
-"""
+
 Grand Theft Auto - Vice City Extreme
 
 Cheat                        Result 
