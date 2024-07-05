@@ -1,1 +1,15 @@
-requirements.txt
+# Requirements.txt
+
+# GUI
+tkinter
+
+# Automation
+pyautogui
+
+# Keyboard Input Handling
+keyboard
+
+# Memory manipulation
+pymem
+
+# Threading

@@ -1,113 +1,31 @@
-"""
-Author: MD. SABBIR HOSEN HOOWLADER
-Website: https://sabbir28.github.io/
-License: Private, do not change without permission
-
-
-Grand Theft Auto - Vice City Extreme
-
-Cheat                        Result 
------------------------------------
-General Cheats             
-==============        
-THUGSTOOLS                 - All Level1 Weapons 
-PROFESSIONALTOOLS          - All Level2 Weapons  
-NUTTERTOOLS                - All Level3 Weapons 
-ASPIRINE                   - Full Health 
-PRECIOUSPROTECTION         - Full Armor 
-FANNYMAGNET                - Ladies Magnet (women follow you) 
-YOUWONTTAKEMEALIVE         - Higher Wanted Level  
-LEAVEMEALONE               - No Wanted Level 
-ICANTTAKEITANYMORE         - Commit Suicide 
-youcantleavemealone        - can't die
-fullcitypeoplemines        - buy full city
-freewayforangeljoy         - Get 100 bikes
-americahelicopter          - get ahunter helicopter
-flyingways                 - get a aeroplane dodo or kimo
-DEMONSPEED                 - makes faster the whole city including Tommy
-leavemealone               - No Police
-
-Character Skin Cheats
-=====================     
-DEEPFRIEDMARSBARS          - Fat Body 
-PROGRAMMER                 - Skinny arms and legs 
-STILLLIKEDRESSINGUP        - Random Change of Clothes 
-CERTAINDEATH               - Smoke a cigarette 
-CHEATSHAVEBEENCRACKED      - Play as Ricardo Diaz 
-LOOKLIKELANCE              - Play as Lance Vance 
-MYSONISALAWYER             - Play as Ken Rosenberg 
-LOOKLIKEHILARY             - Play as Hilary King 
-ROCKANDROLLMAN             - Play as Love Fist character Jezz Torent 
-WELOVEOURDICK              - Play as Love Fist character Dick 
-ONEARMEDBANDIT             - Play as Phil Cassidy.  
-IDONTHAVETHEMONEYSONNY     - Play as Sonny Forelli.  
-FOXYLITTLETHING            - Play as Mercedes 
-
-Vehicle Spawn Cheats  
-====================   
-PANZER                     - Spawns a Rhino 
-TRAVELINSTYLE              - Spawns a Bloodring Banger  
-GETTHEREQUICKLY            - Spawns Bloodring Banger#2  
-GETTHEREFAST               - Spawns a Sabre Turbo  
-GETTHEREVERYFASTINDEED     - Spawns a Hotring Racer  
-GETTHEREAMAZINGLYFAST      - Spawns Hotring Racer#2  
-THELASTRIDE                - Spawns a Romero's Hearse  
-ROCKANDROLLCAR             - Spawns Love Fist's Limo 
-RUBBISHCAR                 - Spawns a Trashmaster 
-BETTERTHANWALKING          - Spawns a Caddie 
-
-Vehicle Cheats 
-============== 
-Update by: CyberWolf
-
-AIRSHIP                    - Ships have flying ability 
-BIGBANG                    - Blows up all nearby vehicles 
-MIAMITRAFFIC               - Aggressive Traffic  
-AHAIRDRESSERSCAR           - All Pink Vehicles 
-IWANTITPAINTEDBLACK        - All Black Vehicles 
-COMEFLYWITHME              - Vehicles have flying ability 
-GRIPISEVERYTHING           - Better Vehicle Handling 
-GREENLIGHT                 - All Traffic Lights are green 
-SEAWAYS                    - Vehicles drive on water 
-WHEELSAREALLINEED          - Makes only vehicle wheels visible 
-LOADSOFLITTLETHINGS        - Sportscars have bigger wheels 
-
-Weather Cheats 
-==============     
-ALOVELYDAY                 - Clear Weather 
-APLEASANTDAY               - Lightly Clouded 
-ABITDRIEG                  - Dense Clouds 
-CANTSEEATHING              - Foggy Weather 
-CATSANDDOGS                - Stormy Weather 
-
-Miscellaneous Cheats  
-====================    
-LIFEISPASSINGMEBY          - Speeds up Game Clock  
-ONSPEED                    - Makes everything faster  
-BOOOOOORING                - Makes everything slower  
-FIGHTFIGHTFIGHT            - Aggressive Pedestrians  
-NOBODYLIKESME              - Everybody wants to kill you 
-OURGODGIVENRIGHTTOBEARARMS - Pedestrians carry weapons 
-CHICKSWITHGUNS             - Only Female Peds carry weapons 
-CHASESTAT                  - Shows Media Level  
-
-"""
-
-BG = "green"
-FG = "black"
-
 import pyautogui
-import keyboard
 import time
-#pip install pymem
-#pip install keyboard
 from tkinter import *
-from settings import *
-import keyboard as kb
 from threading import Thread
-from time import sleep
+import keyboard as kb
 
-CARENT_WENDOW = "main"
+BG = "black"
+FG = "green"
+RD = "blue"
+
+OPEN = "ctrl+a+f1"
+CLOSE = "ctrl+a+f2"
+General_Cheats = "ctrl+a+p"
+Weapons_O = "ctrl+a+o"
+Weapons_L = "ctrl+a+l"
+Weapons_K = "ctrl+a+k"
+police = "ctrl+a+i"
+
+Vehicle_1 = "ctrl+a+z"
+Vehicle_2 = "ctrl+a+x"
+Vehicle_3 = "ctrl+a+c"
+Vehicle_4 = "ctrl+a+v"
+Vehicle_5 = "ctrl+a+b"
+Vehicle_6 = "ctrl+a+g"
+Vehicle_7 = "ctrl+a+h"
+Vehicle_8 = "ctrl+a+j"
+Vehicle_9 = "ctrl+a+t"
+Vehicle_0 = "ctrl+a+r"
 
 class ModMenu():
     def __init__(self, window_title, width, height):
@@ -118,94 +36,43 @@ class ModMenu():
         self.win.wm_attributes("-topmost", 1)
         self.win.wm_attributes("-alpha", 0.7)
         self.win.configure(background=BG)
-
-        #self.title_label.pack()
-
-        #self.ammo_btn1 = Button(self.win, text="General Cheats", font=('Arial',12), bg=BG, fg=FG, command=self.ammo_hack)
-        #self.ammo_btn1.place(x=30,y=60)
-
+        
         self.mainWindow()
 
-    
     def mainWindow(self):
-        self.title_label = Label(self.win, text="GTA VICE CITY", font=('Arial',16), bg=BG, fg=FG)
-        self.title_label.place(x=140,y=20)
+        labels_data = [
+            ("GTA VICE CITY", ('Arial', 16), BG, FG, 140, 20),
+            ("Cheat", ('Arial', 12), BG, RD, 30, 60),
+            ("Keays", ('Arial', 12), BG, RD, 250, 60),
+            (" ", ('Arial', 10), BG, RD, 10, 80),
+            ("Full Health", ('Arial', 12), BG, FG, 30, 100),
+            ("P,N", ('Arial', 12), BG, FG, 250, 100),
+            ("Weapons", ('Arial', 12), BG, FG, 30, 130),
+            ("O,L,K", ('Arial', 12), BG, FG, 250, 130),
+            ("Police", ('Arial', 12), BG, FG, 30, 160),
+            ("I,#", ('Arial', 12), BG, FG, 250, 160),
+            ("Vehicle Cheats", ('Arial', 12), BG, FG, 30, 190),
+            ("Z,X,C,V,B,G,H,J,T,R", ('Arial', 12), BG, FG, 250, 190),
+            ("Vehicle Skill", ('Arial', 12), BG, FG, 30, 220),
+            ("Y", ('Arial', 12), BG, FG, 250, 220),
+            ("Vehicle Flay", ('Arial', 12), BG, FG, 30, 250),
+            ("F", ('Arial', 12), BG, FG, 250, 250),
+            ("Hide", ('Arial', 12), BG, FG, 30, 280),
+            ("F1", ('Arial', 12), BG, FG, 250, 280),
+            ("EXIT", ('Arial', 12), BG, FG, 30, 310),
+            ("F2", ('Arial', 12), BG, FG, 250, 310)
+        ]
 
-
-        self.title_label = Label(self.win, text="Cheat", font=('Arial',12), bg=BG, fg=RD)
-        self.title_label.place(x=30,y=60)
-
-        self.title_label = Label(self.win, text="Keays", font=('Arial',12), bg=BG, fg=RD)
-        self.title_label.place(x=250,y=60)
-
-        self.title_label = Label(self.win, text="===========================SABBIR=======================", font=('Arial',10), bg=BG, fg=RD)
-        self.title_label.place(x=10,y=80)
-
-        self.title_label = Label(self.win, text="Full Health", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=100)
-
-        self.title_label = Label(self.win, text="P,N", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=100)
-
-        self.title_label = Label(self.win, text="Weapons", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=130)
-
-        self.title_label = Label(self.win, text="O,L,K", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=130)
-
-        self.title_label = Label(self.win, text="Police", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=160)
-
-        self.title_label = Label(self.win, text="I,#", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=160)
-
-        self.title_label = Label(self.win, text="Vehicle Cheats", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=190)
-
-        self.title_label = Label(self.win, text="Z,X,C,V,B,G,H,J,T,R", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=190)
-
-        self.title_label = Label(self.win, text="Vehicle Skill", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=220)
-
-        self.title_label = Label(self.win, text="Y", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=220)
-
-        self.title_label = Label(self.win, text="Vehicle Flay", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=250)
-
-        self.title_label = Label(self.win, text="F", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=250)
-
-        #self.exit_btn = Button(self.win, text="Exit(F2)", font=('Arial',14), bg=BG, fg=FG, command=self.win.destroy)
-        #self.exit_btn.place(x=180,y=300)
-
-        self.title_label = Label(self.win, text="Hide", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=280)
-
-        self.title_label = Label(self.win, text="F1", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=280)
-
-        self.title_label = Label(self.win, text="EXIT", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=30,y=310)
-
-        self.title_label = Label(self.win, text="F2", font=('Arial',12), bg=BG, fg=FG)
-        self.title_label.place(x=250,y=310)
-        
-        return CARENT_WENDOW == "main"
-
-        
+        for text, font, bg, fg, x, y in labels_data:
+            label = Label(self.win, text=text, font=font, bg=bg, fg=fg)
+            label.place(x=x, y=y)
 
     def center(self, width, height):
         swidth = self.win.winfo_screenwidth()
         sheight = self.win.winfo_screenheight()
-        #swidth = 640
-        #sheight = 480
-        x = (swidth/2) - (width/2)
-        y = (sheight/2) - (height/2)
+        x = (swidth / 2) - (width / 2)
+        y = (sheight / 2) - (height / 2)
         return int(x), int(y)
-
-
 
 def keybinds(modmenu):
     isopen = True
@@ -219,12 +86,9 @@ def keybinds(modmenu):
             pyautogui.write("SEAWAYS")
             time.sleep(0.1)
 
-            
-
         if kb.is_pressed('f'):
             pyautogui.write("AIRSHIP")
             time.sleep(0.1)
-
 
         if kb.is_pressed(General_Cheats):
             pyautogui.write("ASPIRINE")
@@ -259,12 +123,10 @@ def keybinds(modmenu):
         
         if kb.is_pressed(Vehicle_9):
             pyautogui.write("PANZER")
-        
 
         if kb.is_pressed(Weapons_O):
             pyautogui.write("THUGSTOOLS")
             
-        
         if kb.is_pressed(Weapons_L):
             pyautogui.write("PROFESSIONALTOOLS")
 
@@ -276,17 +138,15 @@ def keybinds(modmenu):
 
         if kb.is_pressed(CLOSE):
             modmenu.win.destroy()
+
         if kb.is_pressed(OPEN):
-            if isopen == True:
+            if isopen:
                 modmenu.win.withdraw()
                 isopen = False
             else:
                 modmenu.win.deiconify()
                 isopen = True
-                #modmenu.win.focus_force()
-            sleep(0.5)
-
-
+            time.sleep(0.5)
 
 modmenu = ModMenu("GTA VICE CITY", 400, 400)
 
