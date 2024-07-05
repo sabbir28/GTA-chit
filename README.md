@@ -24,9 +24,9 @@ GTA-chit is a program developed to explore the possibilities of game modificatio
 
 Here are a couple of screenshots showcasing the program's interface and functionality:
 
-![Screenshot 1](https://github.com/sabbir28/GTA-chit/blob/main/1.png?raw=true)
+![Screenshot 1](https://github.com/sabbir28/GTA-chit/blob/main/img/1.png?raw=true)
 
-![Screenshot 2](https://github.com/sabbir28/GTA-chit/blob/main/2.png?raw=true)
+![Screenshot 2](https://github.com/sabbir28/GTA-chit/blob/main/img/2.png?raw=true)
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ Contributions to GTA-chit are welcome! If you have any ideas, suggestions, or im
 
 ## License
 
-GTA-chit is released under the [MIT License](https://alor28.web.app/). Please review the license file for more details.
+GTA-chit is released under the [MIT License](https://sabbir28.github.io/). Please review the license file for more details.
 
 ## Disclaimer
 
