@@ -1,3 +1,9 @@
+"""
+Author: MD. SABBIR HOSEN HOOWLADER
+Website: https://sabbir28.github.io/
+License: Private, do not change without permission
+"""
+
 BG = "black"
 FG = "green"
 
